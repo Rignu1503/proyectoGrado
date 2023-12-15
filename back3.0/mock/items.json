@@ -1,0 +1,38 @@
+[
+    {
+        "id": "1ec58676-898f-4fa5-9fcf-1f386dda4724",
+        "title": "ropa",
+        "price": 9.99,
+        "image": "menSection1.webp"
+    },
+    {
+        "id": "420bad3c-974e-4749-9e35-7ea303320e93",
+        "title": "ropa",
+        "price": 9.99,
+        "image": "menSection2.webp"
+    },
+    {
+        "id": "bb5c95a2-f1d3-44ad-bafd-3ebd7bdbcaa9",
+        "title": "Pokemon Verde",
+        "price": 9.99,
+        "image": "menSection3.webp"
+    },
+    {
+        "id": "8655bd50-c30c-476c-81e4-ce78a0298a52",
+        "title": "Pokemon Plata",
+        "price": 19.99,
+        "image": "menSection4.webp"
+    },
+    {
+        "id": "12b06f0e-7a73-4b0c-b70d-ddb614eb60a8",
+        "title": "Pokemon Oro",
+        "price": 19.99,
+        "image": "menSection5.webp"
+    },
+    {
+        "id": "df72e507-7988-451a-9e20-0cf3ef3a52af",
+        "title": "Sonic",
+        "price": 6.99,
+        "image": "menSection6.webp"
+    }
+]

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rigucci</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700&family=Lexend+Exa:wght@600&family=Playfair+Display:wght@500&family=Roboto:wght@300&display=swap" rel="stylesheet">
+            <!-- SCRIPTS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script defer src="../../src/main.js"></script>
+    <script defer src="../../tienda.js"></script>
+    <script defer src="../../src/payment.js"></script>
+    
+</head>
+<body>
+    <header>
+        <p class="logo"><a href="../../index.html">RIGUCCI</a></p>
+        <nav class="navigation-links desktop">
+            <a href="../../index.html">Home</a>
+            <a href="#">Men</a>
+            <a href="../women/women.html">Women</a>
+        </nav>
+        <div class="icons desktop">
+
+            <img class="navbar-icon" src="../../assets/search-icon.svg" alt="">
+            <img class="navbar-icon" src="../../assets/user-icon.svg" alt="">
+            <img class="navbar-icon" src="../../assets/cart.svg" alt="">
+
+            <select name="language" id="language" onchange="location = this.value"> 
+              <option value="men-esp.html">
+                Esp
+              </option> 
+              <option value="men.html">
+                Eng
+              </option> 
+          </select>
+
+        </div>
+        <div class="burguer-icon mobile">
+          
+          <label for="menu-toggle" id="menu-icon">
+            <img src="../../assets/burguer-menu.svg" alt="">
+          </label>
+          <input type="checkbox" id="menu-toggle">
+          <div id="menu-wrapper">
+              <ul id="menu">
+                  <li><a href="#">Opción 1</a><br></li>
+                  <li><a href="#">Opción 2</a><br></li>
+                  <li><a href="#">Opción 3</a><br><br><br><br><br><br></li>
+                  
+                  <li class="li-container">
+                    <div class="">
+                      <a href="#">
+                        <img class="navbar-icon" src="../../assets/search-icon.svg"     alt="">
+                      </a>
+                      <a href="#">
+                        Buscar
+                      </a>
+                    </div>
+                  </li>
+
+                  <li class="li-container">
+                    <div>
+                      <a href="#">
+                        <img class="navbar-icon" src="../../assets/user-icon.svg" alt="">
+                      </a>
+                      <a href="#">
+                        Perfil
+                      </a>
+                    </div>
+                  </li>
+
+                  <li class="li-container">
+                    <div class="">
+                      <a href="#">
+                        <img class="navbar-icon" src="../../assets/user-icon.svg" alt="">
+                      </a>
+                      <a href="#">
+                        Perfil
+                      </a>
+                    </div>
+                  </li>
+
+                  <li class="li-container">
+                    <div>
+                      <select name="language" id="language" onchange="location = this.value"> 
+                        <option value="men-esp.html">
+                          Esp
+                        </option> 
+                        <option value="men.html">
+                          Eng
+                        </option> 
+                    </select>
+                    </div>
+                  </li>
+                  
+
+                    
+                  
+              </ul>
+          </div>
+        </div>
+    </header>
+    
+    <main>
+      <h1>COLLECCIÓN PARA CABALLERO</h1>
+      <div class="main-menu">
+        <hr>
+        <div class="container">
+          <div>
+            <img src="../../assets/filter-icon.svg" alt="">
+            <span>Filtrar</span>
+          </div>
+          <div>
+            <img src="../../assets/filter-icon.svg" alt="">
+            <span>9 Productos</span>
+          </div>
+          <select name="language" id="language"> 
+            <option value="Sort">Ordenar Por</option>
+            <option value="English">Ing</option> 
+            <option value="Espaniol">Esp</option> 
+          </select>
+        </div>
+        <hr>
+      </div>
+
+      <div class="div_padre">
+        <!-- <div class="row">
+          <div class="card_hijo">
+                <img class="item-image" src="../../img/menSection1.webp" alt="">
+                <p class="item-title">Gianni Ribbon Mid Pumps</p>
+                <p class="item-price">1.400.000</p>
+                <button class="addToCart">
+                    <svg class="cart" fill="white" viewBox="0 0 576 512" height="1em" xmlns="http://www.w3.org/2000/svg"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path></svg>
+                    ADD TO CART
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512" class="productbtn"><path d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"></path></svg>
+                </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="card_hijo">
+                <img class="item-image" src="../../img/menSection1.webp" alt="">
+                <p class="item-title">Gianni Ribbon Mid Pumps</p>
+                <p class="item-price">1.400.000</p>
+                <button class="addToCart">
+                    <svg class="cart" fill="white" viewBox="0 0 576 512" height="1em" xmlns="http://www.w3.org/2000/svg"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path></svg>
+                    ADD TO CART
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512" class="productbtn"><path d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"></path></svg>
+                </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="card_hijo">
+                <img class="item-image" src="../../img/menSection1.webp" alt="">
+                <p class="item-title">Gianni Ribbon Mid Pumps</p>
+                <p class="item-price">1.400.000</p>
+                <button class="addToCart">
+                    <svg class="cart" fill="white" viewBox="0 0 576 512" height="1em" xmlns="http://www.w3.org/2000/svg"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path></svg>
+                    ADD TO CART
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512" class="productbtn"><path d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"></path></svg>
+                </button>
+          </div>
+        </div>  
+      </div> -->
+
+
+
+
+
+      <!-- <div class="clothes-wrapper">
+        <div class="row">
+          <div class="product-card">
+            <a href="../header/Pantalon.html">
+              <img class="imagen" src="../../assets/menSection1.webp" alt="">
+              <p>
+                <span class="">Gianni Ribbon Mid Pumps</span> <br>
+                COP 4’000.000
+              </p>
+            </a>
+          </div>
+          <div class="product-card">
+            <img src="../../assets/menSection2.webp" alt="">
+            <p>
+              <span>Gianni Ribbon Mid Pumps</span> <br>
+              COP 4’000.000
+
+            </p>
+          </div>
+          <div class="product-card">
+            <img src="../../assets/menSection3.webp" alt="">
+            <p>
+              <span>Gianni Ribbon Mid Pumps</span> <br>
+              COP 4’000.000
+
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="product-card">
+            <img src="../../assets/menSection4.webp" alt="">
+            <p>
+              <span>Gianni Ribbon Mid Pumps</span> <br>
+              COP 4’000.000
+
+            </p>
+          </div>
+          <div class="product-card">
+            <img src="../../assets/menSection5.webp" alt="">
+            <p>
+              <span>Gianni Ribbon Mid Pumps</span> <br>
+              COP 4’000.000
+
+            </p>
+          </div>
+          <div class="product-card">
+            <img src="../../assets/menSection6.webp" alt="">
+            <p>
+              <span>Gianni Ribbon Mid Pumps</span> <br>
+              COP 4’000.000
+
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="product-card">
+            <img src="../../assets/menSection7.webp" alt="">
+            <p>
+              <span>Gianni Ribbon Mid Pumps</span> <br>
+              COP 4’000.000
+
+            </p>
+          </div>
+          <div class="product-card">
+            <img src="../../assets/menSection8.webp" alt="">
+            <p>
+              <span>Gianni Ribbon Mid Pumps</span> <br>
+              COP 4’000.000
+
+            </p>
+          </div>
+          <div class="product-card">
+            <img src="../../assets/menSection9.webp" alt="">
+            <p>
+              <span>Gianni Ribbon Mid Pumps</span> <br>
+              COP 4’000.000
+
+            </p>
+          </div>
+        </div>
+      </div> -->
+      
+    </main>
+
+
+    <section class="shopping-cart">
+      <div class="container">
+          <h1 class="text-center">CARRITO</h1>
+          <hr>
+          <div class="row">
+              <div class="col-6">
+                  <div class="shopping-cart-header">
+                      <h6>Producto</h6>
+                  </div>
+              </div>
+              <div class="col-2">
+                  <div class="shopping-cart-header">
+                      <h6 class="text-truncate">Precio</h6>
+                  </div>
+              </div>
+              <div class="col-4">
+                  <div class="shopping-cart-header">
+                      <h6>Cantidad</h6>
+                  </div>
+              </div>
+          </div>
+          <!-- ? START SHOPPING CART ITEMS -->
+          <div class="shopping-cart-items shoppingCartItemsContainer">
+          </div>
+          <!-- ? END SHOPPING CART ITEMS -->
+
+          <!-- START TOTAL -->
+          <div class="row">
+              <div class="col-12">
+                  <div class="shopping-cart-total d-flex align-items-center">
+                      <p class="mb-0">Total</p>
+                      <p class="ml-4 mb-0 shoppingCartTotal">0€</p>
+                      <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true"
+                          data-delay="2000">
+                          <div class="toast-header">
+                              <span>✅</span>
+                              <strong class="mr-auto ml-1 text-secondary">Elemento en el carrito</strong>
+                              <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="toast-body text-white">
+                              Se aumentó correctamente la cantidad
+                          </div>
+                      </div>
+                      <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal"
+                          data-target="#comprarModal">Comprar</button>
+                  </div>
+              </div>
+          </div>
+
+          <!-- END TOTAL -->
+
+          <!-- START MODAL COMPRA -->
+          <div class="modal fade" id="comprarModal" tabindex="-1" aria-labelledby="comprarModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="comprarModalLabel">Datos para el envío</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                          <!-- ? STRIPE START -->
+                          <form id="payment-form">
+                              <div class="form-group">
+                                  <label for="email-element">Email</label>
+                                  <input type="email" class="form-control" id="email-element"
+                                      aria-describedby="emailHelp" placeholder="E-mail">
+                              </div>
+                              <div class="form-group">
+                                  <div id="card-element" class="form-control"
+                                      style='height: 2.4em; padding-top: .7em;'>
+                                      <!--Stripe.js injects the Card Element-->
+                                  </div>
+                              </div>
+                              <button id="submit" class="btn btn-primary w-100">
+                                  <div class="spinner-border text-light hidden" id="spinner" role="status">
+                                      <span class="sr-only">Loading...</span>
+                                  </div>
+                                  <span id="button-text">Pagar</span>
+                              </button>
+                              <p id="card-error" role="alert"></p>
+                              <p class="result-message hidden">
+                                  Pago satisfactorio
+                                  ✅
+                                  En breve recibirá su pedido
+
+                              </p>
+                          </form>
+                          <!-- ? STRIPE END -->
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- END MODAL COMPRA -->
+
+
+      </div>
+
+  </sectionL -->
+
+
+
+
+
+    <footer>
+      <div class="footer__container">
+        <div class="col">
+          <p>
+            <span>Servicio al cliente y FAQ</span> <br>
+            FAQ <br>
+            Contáctanos <br>
+            Guía de tallas <br>
+            Buscador de tiendas <br>
+          </p>
+        </div>
+        <div class="col">
+          <p>
+            <span>Sobre nosotros</span> <br>
+            Acerca de Rigucci <br>
+            Sostenebilidad <br>
+            Trabajos y Carrera <br>
+          </p>
+        </div>
+        <div class="col">
+          <p>
+            <span>Legal</span> <br>
+            Términos de Uso <br>
+            Términos y Condiciones <br>
+            Política de Privacidad <br>
+          </p>
+        </div>
+      </div>
+      <hr>
+      <div class="copyright">
+        <span>Copyright ⓒ 2023 Rigucci. Todos los derechos reservados.</span>
+        <div class="social-media-icons">
+          <ul>
+            <li><a href=""><img src="../../assets/facebook.svg" alt=""></a></li>
+            <li><a href=""><img src="../../assets/ex.svg" alt=""></a></li>
+            <li><a href=""><img src="../../assets/insta.svg" alt=""></a></li>
+            <li><a href=""><img src="../../assets/tiktok.svg" alt=""></a></li>
+            <li><a href=""><img src="../../assets/pinterest.svg" alt=""></a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+</body>
+</html>

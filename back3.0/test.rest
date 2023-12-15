@@ -1,0 +1,51 @@
+GET http://localhost:3000/
+
+###
+
+GET http://localhost:3000/items/item
+Content-Type: application/json
+
+{
+    "itemId": "6576757829b42824294e9da7"
+}
+
+###
+
+GET http://localhost:3000/items/
+###
+
+
+POST http://localhost:3000/items/
+Content-Type: application/json
+
+{
+    "title": "Camisa",
+    "price": 60.90,
+    "image": "menSection6.webp"
+}
+
+###
+POST http://localhost:3000/create-payment-intent
+Content-Type: application/json
+
+[
+    {
+        "id": "6576757829b42824294e9da7",
+        "qty": 2
+    }
+]
+
+###
+
+POST http://localhost:3000/order
+Content-Type: application/json
+
+{
+    "email" : "test@test.com",
+    "items" :[
+        { 
+            "id": "6576757829b42824294e9da7",
+            "qty": 2
+        }
+    ]
+}
