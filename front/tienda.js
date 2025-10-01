@@ -51,7 +51,7 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage, itemId) {
   }
 
   const shoppingCartRow = document.createElement('div');
-  const shopping CartContent = `
+  const shoppingCartContent = `
   <div class="row shoppingCartItem" data-id=${itemId}>
         <div class="col-6">
             <div class="shopping-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">

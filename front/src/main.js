@@ -1,4 +1,4 @@
-const serverUrl = 'http://localhost:3000/';
+const serverUrl = 'https://proyectogradobackend.onrender.com/';
 const itemsPath = 'items/';
 const imagesPath = '../../img/';
 
